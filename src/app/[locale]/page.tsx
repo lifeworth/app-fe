@@ -1,12 +1,62 @@
-import { useTranslations } from "next-intl";
-import { Link } from "@/i18n/navigation";
+import Image from "next/image";
+import Link from "next/link";
+import { Button, Timeline } from "antd";
+import { useTranslations } from 'next-intl';
+import styles from './page.module.css';
 
-export default function HomePage() {
-  const t = useTranslations("HomePage");
+export default function Home() {
+  const t = useTranslations('index');
   return (
-    <div>
-      <h1>{t("title")}</h1>
-      <Link href="/dashboard">{t("about")}</Link>
-    </div>
+    <main className={styles.home}>
+      <Image
+        src="/favicon.png"
+        alt="next-admin"
+        width={120}
+        height={60}
+        style={{ borderRadius: 6 }}
+        priority
+      />
+      <div className={styles.content}>
+        <p>
+          {t('desc')}
+        </p>
+
+        <h2>{t('log.title')}</h2>
+
+        <div className={styles.timeBox}>
+          <Timeline
+            items={[
+              {
+                children: t('log.1'),
+              },
+              {
+                children: t('log.2'),
+              },
+              {
+                children: t('log.3'),
+              },
+              {
+                children: t('log.5'),
+              },
+              {
+                children: t('log.6'),
+              },
+              {
+                color: 'orange',
+                children: t('log.7'),
+              }
+            ]}
+          />
+        </div>
+
+        <div>
+          <Link href="/dashboard" style={{ marginRight: 20 }}><Button type="primary">{t('try')}</Button></Link>
+          <Link href="http://flowmix.tunrtip/flow" style={{ marginRight: 20 }}><Button type="primary"> {t('flow')} </Button></Link>
+          <Link href="http://doc.dooring.vip" target="_blank"><Button type="primary">{t('wep')}</Button></Link>
+        </div>
+      </div>
+
+
+    </main>
   );
 }
