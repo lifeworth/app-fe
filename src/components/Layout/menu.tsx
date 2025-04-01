@@ -13,91 +13,90 @@ import {
   FileExcelOutlined,
   PieChartOutlined,
   LinkOutlined,
-  FileMarkdownOutlined
-} from '@ant-design/icons';
-import React from 'react';
+  FileMarkdownOutlined,
+} from "@ant-design/icons";
+import React from "react";
 
 const getNavList = (t: any) => {
   return [
     {
-      key: '/',
+      key: "/",
       icon: <DesktopOutlined />,
-      label: t('dashboard'),
+      label: t("dashboard"),
       children: [
         {
-          key: '/dashboard',
+          key: "/dashboard",
           icon: <BarChartOutlined />,
-          label: t('customChart')
+          label: t("customChart"),
         },
         {
-          key: '/dashboard/monitor',
+          key: "/dashboard/monitor",
           icon: <FundOutlined />,
-          label: t('monitor')
+          label: t("monitor"),
         },
         {
-          key: '/dashboard/chart',
+          key: "/dashboard/chart",
           icon: <PieChartOutlined />,
-          label: t('chart')
+          label: t("chart"),
         },
         {
-          key: '/dashboard/rpa',
+          key: "/dashboard/rpa",
           icon: <PartitionOutlined />,
-          label: t('rpa')
-        }
-      ]
+          label: t("rpa"),
+        },
+      ],
     },
     {
-      key: '/user',
+      key: "/user",
       icon: <UserOutlined />,
-      label: t('userManage')
+      label: t("userManage"),
     },
     {
-      key: '/agents',
+      key: "/agents",
       icon: <OpenAIOutlined />,
-      label: t('agents')
+      label: t("agents"),
     },
     {
-      key: '/excel',
+      key: "/excel",
       icon: <FileExcelOutlined />,
-      label: t('excel')
+      label: t("excel"),
     },
     {
-      key: '/md',
+      key: "/md",
       icon: <FileMarkdownOutlined />,
-      label: t('mdDoc')
+      label: t("mdDoc"),
     },
     {
-      key: 'http://flowmix.turntip.cn/docx',
+      key: "http://flowmix.turntip.cn/docx",
       icon: <LinkOutlined />,
-      label: t('outlink')
+      label: t("outlink"),
     },
     {
-      key: '/formEngine',
+      key: "/formEngine",
       icon: <CalculatorOutlined />,
-      label: t('formEngine')
+      label: t("formEngine"),
     },
     {
-      key: '/dragMode',
+      key: "/dragMode",
       icon: <BuildOutlined />,
-      label: t('dragMode')
+      label: t("dragMode"),
     },
     {
-      key: '/board',
+      key: "/board",
       icon: <LayoutOutlined />,
-      label: t('board')
+      label: t("board"),
     },
     {
-      key: '/order',
+      key: "/order",
       icon: <ScheduleOutlined />,
-      label: t('orderList')
+      label: t("orderList"),
     },
     {
-      key: '/resource',
+      key: "/resource",
       icon: <WalletOutlined />,
-      label: t('resource')
+      label: t("resource"),
     },
-
-  ]
-}
+  ];
+};
 
 export default getNavList;

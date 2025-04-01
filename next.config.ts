@@ -1,12 +1,15 @@
 import type { NextConfig } from "next";
 import createNextIntlPlugin from "next-intl/plugin";
-
 const nextConfig: NextConfig = {
   /* config options here */
+  reactStrictMode: true, // 启用严格模式
+  sassOptions: {
+    additionalData: `$var: red;`,
+  },
 };
 
-const withAntdLess = require("next-plugin-antd-less");
+const withNextIntl = createNextIntlPlugin({});
 
-const withNextIntl = createNextIntlPlugin({})(nextConfig);
-
-export default withAntdLess(withNextIntl);
+export default withNextIntl({
+  ...nextConfig,
+});

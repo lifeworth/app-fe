@@ -1,34 +1,34 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ['./src/**/*.{tsx,css}'],
+  content: ["./src/**/*.{tsx,css}"],
   theme: {
     fontFamily: {
-      sans: ['Inter', 'sans-serif'],
+      sans: ["Inter", "sans-serif"],
       mono: [
-        'Monaco',
-        'ui-monospace',
-        'SFMono-Regular',
-        'Menlo',
-        'Consolas',
-        'Liberation Mono',
-        'Courier New',
-        'monospace'
-      ]
+        "Monaco",
+        "ui-monospace",
+        "SFMono-Regular",
+        "Menlo",
+        "Consolas",
+        "Liberation Mono",
+        "Courier New",
+        "monospace",
+      ],
     },
     container: {
       center: true,
       screens: {
-        sm: '50rem'
-      }
+        sm: "50rem",
+      },
     },
     extend: {
       colors: {
         slate: {
-          850: 'hsl(222deg 47% 16%)'
+          850: "hsl(222deg 47% 16%)",
         },
-        primary: '#5fc3e7'
-      }
-    }
+        primary: "#5fc3e7",
+      },
+    },
   },
-  plugins: []
+  plugins: [],
 };

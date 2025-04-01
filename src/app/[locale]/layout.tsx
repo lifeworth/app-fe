@@ -2,11 +2,13 @@ import { AntdRegistry } from "@ant-design/nextjs-registry";
 import "@ant-design/v5-patch-for-react-19";
 import type { Metadata } from "next";
 import { getTranslations, setRequestLocale } from "next-intl/server";
-
-import { NextIntlClientProvider, hasLocale } from "next-intl";
+import { Inter } from "next/font/google";
+import { hasLocale } from "next-intl";
 import { notFound } from "next/navigation";
 import { routing } from "@/i18n/routing";
-import "../globals.css";
+import "@/app/globals.css";
+
+const inter = Inter({ subsets: ["latin"] });
 
 type Props = {
   children: React.ReactNode;
@@ -40,10 +42,8 @@ export default async function RootLayout({
 
   return (
     <html lang={locale}>
-      <body>
-        <NextIntlClientProvider>
-          <AntdRegistry>{children}</AntdRegistry>
-        </NextIntlClientProvider>
+      <body className={inter.className}>
+        <AntdRegistry>{children}</AntdRegistry>
       </body>
     </html>
   );

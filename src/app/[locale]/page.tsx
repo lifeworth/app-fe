@@ -1,11 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Button, Timeline } from "antd";
-import { useTranslations } from 'next-intl';
-import styles from './page.module.css';
+import { useTranslations } from "next-intl";
+import styles from "./page.module.scss";
 
 export default function Home() {
-  const t = useTranslations('index');
+  const t = useTranslations("index");
   return (
     <main className={styles.home}>
       <Image
@@ -17,46 +17,48 @@ export default function Home() {
         priority
       />
       <div className={styles.content}>
-        <p>
-          {t('desc')}
-        </p>
+        <p>{t("desc")}</p>
 
-        <h2>{t('log.title')}</h2>
+        <h2>{t("log.title")}</h2>
 
         <div className={styles.timeBox}>
           <Timeline
             items={[
               {
-                children: t('log.1'),
+                children: t("log.1"),
               },
               {
-                children: t('log.2'),
+                children: t("log.2"),
               },
               {
-                children: t('log.3'),
+                children: t("log.3"),
               },
               {
-                children: t('log.5'),
+                children: t("log.5"),
               },
               {
-                children: t('log.6'),
+                children: t("log.6"),
               },
               {
-                color: 'orange',
-                children: t('log.7'),
-              }
+                color: "orange",
+                children: t("log.7"),
+              },
             ]}
           />
         </div>
 
         <div>
-          <Link href="/dashboard" style={{ marginRight: 20 }}><Button type="primary">{t('try')}</Button></Link>
-          <Link href="http://flowmix.tunrtip/flow" style={{ marginRight: 20 }}><Button type="primary"> {t('flow')} </Button></Link>
-          <Link href="http://doc.dooring.vip" target="_blank"><Button type="primary">{t('wep')}</Button></Link>
+          <Link href="/dashboard" style={{ marginRight: 20 }}>
+            <Button type="primary">{t("try")}</Button>
+          </Link>
+          <Link href="http://flowmix.tunrtip/flow" style={{ marginRight: 20 }}>
+            <Button type="primary"> {t("flow")} </Button>
+          </Link>
+          <Link href="http://doc.dooring.vip" target="_blank">
+            <Button type="primary">{t("wep")}</Button>
+          </Link>
         </div>
       </div>
-
-
     </main>
   );
 }
