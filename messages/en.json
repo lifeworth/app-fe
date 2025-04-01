@@ -1,0 +1,11 @@
+{
+    "HomePage": {
+      "title": "Hello world!",
+      "about": "Go to the about page"
+    },
+    "index": {
+      "title": "Index!",
+      "about": "About",
+      "desc": "Index Desc"
+    }
+  }

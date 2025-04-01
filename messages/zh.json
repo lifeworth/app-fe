@@ -1,0 +1,11 @@
+{
+    "HomePage": {
+      "title": "你好 世界!",
+      "about": "关于页面"
+    },
+    "index": {
+      "title": "主页!",
+      "about": "关于",
+      "desc": "Index 的描述"
+    }
+  }
