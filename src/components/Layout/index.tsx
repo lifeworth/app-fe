@@ -111,7 +111,7 @@ const CommonLayout: React.FC<IProps> = ({
         algorithm: curTheme ? theme.darkAlgorithm : theme.defaultAlgorithm,
       }}
     >
-      <Layout style={{ minHeight: "100vh" }}>
+      <Layout>
         <Sider
           theme={curTheme ? "dark" : "light"}
           breakpoint="lg"
@@ -120,8 +120,7 @@ const CommonLayout: React.FC<IProps> = ({
           onCollapse={(collapsed, type) => {}}
         >
           <span
-            className="m-16 inline-block container font-bold text-lg bg-orange-200 p-6
-            rounded-lg text-center "
+            className="inline-block container font-bold text-lg bg-orange-200 p-6 rounded-lg text-center "
             style={getThemeBg(curTheme)}
           >
             Next-Admin
@@ -137,57 +136,28 @@ const CommonLayout: React.FC<IProps> = ({
         </Sider>
         <Layout>
           <Header
-            style={{ padding: 0, ...getThemeBg(curTheme), display: "flex" }}
+            className="flex justify-end"
+            style={{ ...getThemeBg(curTheme) }}
           >
-            <div className="flex ml-auto">
-              <span className="mr-26">
-                <Popover
-                  content={
-                    <div style={{ width: "100%" }}>
-                      <img
-                        width={180}
-                        src="http://cdn.dooring.cn/FlqY2Ji13zIMMzucQITvryG13m5j"
-                      />
-                    </div>
-                  }
-                  title="技术交流&分享"
-                >
-                  {t("technological exchanges")}
-                </Popover>
-              </span>
-              <span className="mr-24 cursor-pointer">
-                <Popover
-                  content={
-                    <div style={{ width: "100%" }}>
-                      <img width={180} src="/pay.png" />
-                    </div>
-                  }
-                  title="开源不易，支持作者"
-                >
-                  <TransactionOutlined style={{ color: "red" }} /> 赞赏作者
-                </Popover>
-              </span>
-              <span className="mr-28">
-                <Badge dot>
-                  <BellOutlined />
-                </Badge>
-              </span>
+            <div className="flex ml-auto items-end">
               <Link
                 href={pathname as any}
                 locale={otherLocale[0]}
-                className="mr-26 cursor-pointer"
+                className="mr-6"
                 style={{ color: colorTextBase }}
               >
                 {otherLocale[1]}
               </Link>
-              <span onClick={toggleTheme} className="mr-26 cursor-pointer">
+
+              <span className="mr-5" onClick={toggleTheme}>
                 {!curTheme ? (
                   <SunOutlined style={{ color: colorWarningText }} />
                 ) : (
                   <MoonOutlined />
                 )}
               </span>
-              <div className="cursor-pointer">
+
+              <div>
                 <Dropdown menu={{ items }} placement="bottomLeft" arrow>
                   <Avatar
                     style={{ color: "#fff", backgroundColor: colorTextBase }}
@@ -198,10 +168,16 @@ const CommonLayout: React.FC<IProps> = ({
               </div>
             </div>
           </Header>
-          <Content style={{ margin: "24px 16px 0" }}>
+
+          <Content
+            className="m-5"
+            style={{
+              borderRadius: borderRadiusLG,
+            }}
+          >
             <div
+              className="p-24 "
               style={{
-                padding: 24,
                 minHeight: 520,
                 ...getThemeBg(curTheme),
                 borderRadius: borderRadiusLG,
@@ -211,8 +187,7 @@ const CommonLayout: React.FC<IProps> = ({
             </div>
           </Content>
           <Footer style={{ textAlign: "center" }}>
-            Next-Admin ©{new Date().getFullYear()} Created by{" "}
-            <a href="https://github.com/MrXujiang">徐小夕</a>
+            ©{new Date().getFullYear()} Created by <a href="#">du</a>
           </Footer>
         </Layout>
       </Layout>

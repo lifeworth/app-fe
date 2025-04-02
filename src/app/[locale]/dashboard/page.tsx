@@ -1,8 +1,5 @@
 "use client";
-// import { useTranslations} from 'next-intl';
-import { Button, Input, type FormProps } from "antd";
-import { useState, useRef, useEffect } from "react";
-import { useRouter } from "next/navigation";
+import { useRef, useEffect } from "react";
 import { HolderOutlined } from "@ant-design/icons";
 import Layout from "@/components/Layout";
 import Chart from "@/components/Chart";
