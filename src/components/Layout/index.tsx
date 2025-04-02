@@ -7,19 +7,12 @@ import {
   Avatar,
   Dropdown,
   ConfigProvider,
-  Badge,
-  Popover,
   type MenuProps,
 } from "antd";
 import getNavList from "./menu";
 import { useRouter } from "next/navigation";
 import { useLocale, useTranslations } from "next-intl";
-import {
-  BellOutlined,
-  MoonOutlined,
-  SunOutlined,
-  TransactionOutlined,
-} from "@ant-design/icons";
+import { MoonOutlined, SunOutlined } from "@ant-design/icons";
 import { getThemeBg } from "@/utils";
 import { Link, usePathname } from "@/i18n/navigation";
 
@@ -116,6 +109,7 @@ const CommonLayout: React.FC<IProps> = ({
           theme={curTheme ? "dark" : "light"}
           breakpoint="lg"
           collapsedWidth="0"
+          collapsible={true}
           onBreakpoint={(broken) => {}}
           onCollapse={(collapsed, type) => {}}
         >
@@ -144,7 +138,7 @@ const CommonLayout: React.FC<IProps> = ({
                 href={pathname as any}
                 locale={otherLocale[0]}
                 className="mr-6"
-                style={{ color: colorTextBase }}
+                style={{ ...getThemeBg(curTheme),backgroundColor: '' }}
               >
                 {otherLocale[1]}
               </Link>
@@ -176,7 +170,7 @@ const CommonLayout: React.FC<IProps> = ({
             }}
           >
             <div
-              className="p-24 "
+              className="p-24"
               style={{
                 minHeight: 520,
                 ...getThemeBg(curTheme),
@@ -186,7 +180,7 @@ const CommonLayout: React.FC<IProps> = ({
               {children}
             </div>
           </Content>
-          <Footer style={{ textAlign: "center" }}>
+          <Footer className="text-center">
             ©{new Date().getFullYear()} Created by <a href="#">du</a>
           </Footer>
         </Layout>

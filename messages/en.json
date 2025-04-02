@@ -33,6 +33,7 @@
       "excel": "Excel",
       "chart": "Chart Editor",
       "mdDoc": "Markdown编辑器",
+      "demo": "demo",
       "outlink": "flowmix/docx(otherLink)"
   },
   "user": {

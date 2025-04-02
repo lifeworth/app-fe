@@ -96,6 +96,11 @@ const getNavList = (t: any) => {
       icon: <WalletOutlined />,
       label: t("resource"),
     },
+    {
+      key: "/demo",
+      icon: <WalletOutlined />,
+      label: t("demo"),
+    },
   ];
 };
 
